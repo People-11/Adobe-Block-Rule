@@ -1,0 +1,37 @@
+name: Clash
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout actions
+      uses: actions/checkout@v1
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.10'
+
+    - name: run
+      run: |
+        ls
+        python clash.py >> test
+    
+    - name: commit
+      run: |
+        git config --global user.email 349504120p@gmail.com
+        git config --global user.name People-11
+        git add .
+        git commit -m "update" -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.TOKEN }}
