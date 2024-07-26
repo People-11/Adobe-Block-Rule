@@ -22,7 +22,8 @@ jobs:
     - name: run
       run: |
         ls
-        python clash.py >> test
+        pip install requests
+        python clash.py
     
     - name: commit
       run: |
