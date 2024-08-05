@@ -3,8 +3,8 @@ name: Clash
 on:
   schedule:
     - cron: "0 0 * * 1"
-  watch:
-    types: started
+  # watch:
+  #   types: started
 
 jobs:
   build:
