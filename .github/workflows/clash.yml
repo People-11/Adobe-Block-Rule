@@ -27,7 +27,7 @@ jobs:
     
     - name: commit
       run: |
-        git config --global user.email 349504120p@gmail.com
+        git config --global user.email 41558215+People-11@users.noreply.github.com
         git config --global user.name People-11
         git add .
         git commit -m "update" -a
